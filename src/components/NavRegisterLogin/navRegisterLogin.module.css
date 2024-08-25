@@ -1,0 +1,42 @@
+.listLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.link {
+  display: block;
+  transition: transform 250ms;
+}
+
+.link:hover,
+.link:focus {
+  transform: scale(1.1);
+}
+
+.active {
+  text-decoration: underline;
+}
+
+.linkGoogle {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  padding-top: 5px;
+  padding-right: 15px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  background-color: white;
+  border-radius: 15px;
+  transition: transform 250ms;
+}
+
+.linkGoogle:hover,
+.linkGoogle:focus {
+  transform: scale(1.1);
+}

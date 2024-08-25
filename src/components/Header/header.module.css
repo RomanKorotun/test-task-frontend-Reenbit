@@ -1,0 +1,27 @@
+.header {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid black;
+}
+
+.useContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btnLogout {
+  padding-top: 9px;
+  padding-right: 55px;
+  padding-bottom: 9px;
+  padding-left: 55px;
+  background-color: #71bc99;
+  border: 1px solid black;
+  border-radius: 11px;
+  transition: transform 250ms;
+}
+
+.btnLogout:hover,
+.btnLogout:focus {
+  transform: scale(1.1);
+}

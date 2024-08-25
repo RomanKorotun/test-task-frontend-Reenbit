@@ -1,0 +1,33 @@
+.registerForm {
+  padding: 10px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.label {
+  position: relative;
+}
+
+.field {
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.btnRegister {
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.errMsg {
+  position: absolute;
+  left: 0;
+  bottom: -18px;
+  color: red;
+}
