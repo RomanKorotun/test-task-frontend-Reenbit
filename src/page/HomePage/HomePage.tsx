@@ -35,7 +35,7 @@ const HomePage: FC = () => {
           </li>
           <li>
             <a
-              href="http://localhost:3030/api/auth/google"
+              href="https://test-task-backend-reenbit.onrender.com/api/auth/google"
               className={styles.linkGoogle}
             >
               <svg width={35} height={35}>
