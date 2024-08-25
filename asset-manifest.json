@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/test-task-frontend-Reenbit/static/css/main.acad103e.css",
+    "main.js": "/test-task-frontend-Reenbit/static/js/main.9cb53f88.js",
+    "static/css/33.ee35bb0f.chunk.css": "/test-task-frontend-Reenbit/static/css/33.ee35bb0f.chunk.css",
+    "static/js/33.1e94abf4.chunk.js": "/test-task-frontend-Reenbit/static/js/33.1e94abf4.chunk.js",
+    "static/css/434.38a7f1d3.chunk.css": "/test-task-frontend-Reenbit/static/css/434.38a7f1d3.chunk.css",
+    "static/js/434.9eaaec72.chunk.js": "/test-task-frontend-Reenbit/static/js/434.9eaaec72.chunk.js",
+    "static/css/446.6e67963f.chunk.css": "/test-task-frontend-Reenbit/static/css/446.6e67963f.chunk.css",
+    "static/js/446.bb3e0cb5.chunk.js": "/test-task-frontend-Reenbit/static/js/446.bb3e0cb5.chunk.js",
+    "static/css/805.d5060a5c.chunk.css": "/test-task-frontend-Reenbit/static/css/805.d5060a5c.chunk.css",
+    "static/js/805.b0f3df07.chunk.js": "/test-task-frontend-Reenbit/static/js/805.b0f3df07.chunk.js",
+    "static/js/453.ed3810f9.chunk.js": "/test-task-frontend-Reenbit/static/js/453.ed3810f9.chunk.js",
+    "static/js/150.f1725619.chunk.js": "/test-task-frontend-Reenbit/static/js/150.f1725619.chunk.js",
+    "static/media/sprite.svg": "/test-task-frontend-Reenbit/static/media/sprite.865bfbe0631b1e63feb9d9616692f5f4.svg",
+    "index.html": "/test-task-frontend-Reenbit/index.html",
+    "main.acad103e.css.map": "/test-task-frontend-Reenbit/static/css/main.acad103e.css.map",
+    "main.9cb53f88.js.map": "/test-task-frontend-Reenbit/static/js/main.9cb53f88.js.map",
+    "33.ee35bb0f.chunk.css.map": "/test-task-frontend-Reenbit/static/css/33.ee35bb0f.chunk.css.map",
+    "33.1e94abf4.chunk.js.map": "/test-task-frontend-Reenbit/static/js/33.1e94abf4.chunk.js.map",
+    "434.38a7f1d3.chunk.css.map": "/test-task-frontend-Reenbit/static/css/434.38a7f1d3.chunk.css.map",
+    "434.9eaaec72.chunk.js.map": "/test-task-frontend-Reenbit/static/js/434.9eaaec72.chunk.js.map",
+    "446.6e67963f.chunk.css.map": "/test-task-frontend-Reenbit/static/css/446.6e67963f.chunk.css.map",
+    "446.bb3e0cb5.chunk.js.map": "/test-task-frontend-Reenbit/static/js/446.bb3e0cb5.chunk.js.map",
+    "805.d5060a5c.chunk.css.map": "/test-task-frontend-Reenbit/static/css/805.d5060a5c.chunk.css.map",
+    "805.b0f3df07.chunk.js.map": "/test-task-frontend-Reenbit/static/js/805.b0f3df07.chunk.js.map",
+    "453.ed3810f9.chunk.js.map": "/test-task-frontend-Reenbit/static/js/453.ed3810f9.chunk.js.map",
+    "150.f1725619.chunk.js.map": "/test-task-frontend-Reenbit/static/js/150.f1725619.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.acad103e.css",
+    "static/js/main.9cb53f88.js"
+  ]
+}
