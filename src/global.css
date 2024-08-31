@@ -1,10 +1,5 @@
 @import "modern-normalize/modern-normalize.css";
 
-body {
-  background-image: linear-gradient(white, rgb(190, 219, 176));
-  height: 100vh;
-}
-
 h1,
 h2,
 h3,
@@ -24,7 +19,7 @@ ol {
 }
 
 img {
-  display: block;
+  display: inline-block;
   max-width: 100%;
 }
 

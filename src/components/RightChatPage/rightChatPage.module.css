@@ -1,0 +1,136 @@
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  border-left: 1px solid #d6d6d6;
+  height: 100vh;
+  background-color: #faf8f9;
+  top: 0;
+  position: sticky;
+}
+
+.nameChat {
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-top: 30px;
+  padding-right: 15px;
+  padding-bottom: 30px;
+  padding-left: 15px;
+  border-bottom: 1px solid #e3e3e3;
+  color: #9696a4;
+}
+
+.img {
+  border-radius: 11px;
+}
+
+.firstName {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.listMessage {
+  padding: 15px;
+  flex-grow: 1;
+  background-color: #f8f6f7;
+  max-width: 916px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.messageCardLeft {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.messageCardRight {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.messageDateWrapper {
+  max-width: 70%;
+}
+
+.messageLeft {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 20px;
+  color: #b5bac7;
+  background-color: #3f4151;
+  margin-bottom: 5px;
+  max-width: 831px;
+  overflow-wrap: break-word;
+}
+
+.messageRight {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 20px;
+  color: #67656b;
+  background-color: #dfdfdf;
+  margin-bottom: 5px;
+  max-width: 831px;
+  overflow-wrap: break-word;
+}
+
+.dateLeft {
+  color: #9d9b9c;
+  font-size: 10px;
+}
+
+.dateRight {
+  color: #9d9b9c;
+  font-size: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.formWrapper {
+  border-top: 1px solid #e3e3e3;
+  background-color: #f5f5f5;
+  padding-top: 30px;
+  padding-right: 15px;
+  padding-bottom: 30px;
+  padding-left: 15px;
+}
+
+.form {
+  position: relative;
+}
+
+.input {
+  background-color: #fafafa;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #dcdcdc;
+  color: #838383;
+  outline: none;
+}
+
+.btn {
+  position: absolute;
+  top: 0;
+  right: 2px;
+  background-color: transparent;
+  border: none;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #838383;
+}
+
+.icon {
+  fill: currentColor;
+}

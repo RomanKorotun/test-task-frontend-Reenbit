@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* background-image: linear-gradient(white, rgb(190, 219, 176)); */
   height: 100vh;
 }
 

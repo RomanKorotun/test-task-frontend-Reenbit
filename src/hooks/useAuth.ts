@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import {
   avatarSelector,
+  chatsSelector,
   errorSelector,
   isLoggedInSelector,
   isRefreshingSelector,
@@ -15,6 +16,15 @@ export const useAuth = () => {
   const isRefreshing = useSelector(isRefreshingSelector);
   const loading = useSelector(loadingSelector);
   const error = useSelector(errorSelector);
+  const chats = useSelector(chatsSelector);
 
-  return { username, avatar, isLoggedIn, isRefreshing, loading, error };
+  return {
+    username,
+    avatar,
+    isLoggedIn,
+    isRefreshing,
+    loading,
+    error,
+    chats,
+  };
 };

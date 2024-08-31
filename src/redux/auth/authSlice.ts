@@ -1,21 +1,59 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { current, login, logout, register, registerGoogle } from "../api";
+import {
+  addChat,
+  addMessage,
+  current,
+  login,
+  logout,
+  register,
+  registerGoogle,
+  updateIsActiveChat,
+} from "../api";
+
+interface IMessage {
+  _id: string;
+  owner: string;
+  message: string;
+  date: string;
+}
+
+interface IChat {
+  firstName: string;
+  lastName: string;
+  isActive: boolean;
+  avatar: string;
+  owner: {
+    _id: string;
+    email: string;
+  };
+  messages: IMessage[];
+  _id: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+interface IUpdateIsActiveChatResponse {
+  chats: IChat[];
+}
 
 interface IRegisterResponse {
   username: string;
   avatar: string;
   token: string;
+  chats: IChat[];
 }
 
 interface ILoginResponse {
   username: string;
   avatar: string;
   token: string;
+  chats: IChat[];
 }
 
 interface ICurrentResponse {
   username: string;
   avatar: string;
+  chats: IChat[];
 }
 
 interface IRegisterGoogleResponse {
@@ -33,6 +71,7 @@ interface IAuthInitialState {
   isRefreshing: boolean;
   loading: boolean;
   error: boolean;
+  chats: IChat[];
 }
 
 const initialState: IAuthInitialState = {
@@ -44,12 +83,22 @@ const initialState: IAuthInitialState = {
   isRefreshing: false,
   loading: false,
   error: false,
+  chats: [],
 };
 
 const authSlice = createSlice({
   name: "auth",
   initialState,
-  reducers: {},
+  reducers: {
+    addRandomQuote: (state, action: PayloadAction<IChat>) => {
+      state.chats = state.chats.map((chat) => {
+        if (chat._id !== action.payload._id) {
+          return chat;
+        }
+        return action.payload;
+      });
+    },
+  },
   extraReducers: (build) =>
     build
       .addCase(
@@ -59,6 +108,7 @@ const authSlice = createSlice({
           state.username = action.payload.username;
           state.avatar = action.payload.avatar;
           state.token = action.payload.token;
+          state.chats = [...state.chats, ...action.payload.chats];
         }
       )
       .addCase(current.pending, (state) => {
@@ -71,6 +121,7 @@ const authSlice = createSlice({
           state.isLoggedIn = true;
           state.username = action.payload.username;
           state.avatar = action.payload.avatar;
+          state.chats = action.payload.chats;
         }
       )
       .addCase(current.rejected, (state) => {
@@ -81,6 +132,7 @@ const authSlice = createSlice({
         state.avatar = null;
         state.isLoggedIn = false;
         state.token = null;
+        state.chats = [];
       })
       .addCase(
         login.fulfilled,
@@ -89,6 +141,7 @@ const authSlice = createSlice({
           state.username = action.payload.username;
           state.avatar = action.payload.avatar;
           state.token = action.payload.token;
+          state.chats = action.payload.chats;
         }
       )
       .addCase(
@@ -99,7 +152,26 @@ const authSlice = createSlice({
           state.avatar = action.payload.avatar;
           state.token = action.payload.token;
         }
-      ),
+      )
+      .addCase(
+        updateIsActiveChat.fulfilled,
+        (state, action: PayloadAction<IUpdateIsActiveChatResponse>) => {
+          console.log(action);
+          state.chats = action.payload.chats;
+        }
+      )
+      .addCase(addChat.fulfilled, (state, action: PayloadAction<IChat>) => {
+        state.chats = [...state.chats, action.payload];
+      })
+      .addCase(addMessage.fulfilled, (state, action: PayloadAction<IChat>) => {
+        state.chats = state.chats.map((chat) => {
+          if (chat._id !== action.payload._id) {
+            return chat;
+          }
+          return action.payload;
+        });
+      }),
 });
 
 export const authReducer = authSlice.reducer;
+export const { addRandomQuote } = authSlice.actions;

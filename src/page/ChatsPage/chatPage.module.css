@@ -1,0 +1,7 @@
+.containerChatPage {
+  display: flex;
+}
+
+.left {
+  flex-basis: 500px;
+}
