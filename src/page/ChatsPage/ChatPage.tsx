@@ -9,12 +9,12 @@ import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../redux/store";
 import { addRandomQuote } from "../../redux/auth/authSlice";
 
-const socket = io("http://localhost:3030");
-console.log(socket);
+const socket = io("https://test-task-backend-reenbit.onrender.com");
 
 const ChatsPage: FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { chats } = useAuth();
+  console.log(chats);
   useEffect(() => {
     socket.on("quoteResponse", (updatedChat) => {
       dispatch(addRandomQuote(updatedChat));

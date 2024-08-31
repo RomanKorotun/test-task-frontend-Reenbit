@@ -60,6 +60,7 @@ interface IRegisterGoogleResponse {
   username: string;
   avatar: string;
   token: string;
+  chats: IChat[];
 }
 
 interface IAuthInitialState {
@@ -108,7 +109,7 @@ const authSlice = createSlice({
           state.username = action.payload.username;
           state.avatar = action.payload.avatar;
           state.token = action.payload.token;
-          state.chats = [...state.chats, ...action.payload.chats];
+          state.chats = action.payload.chats;
         }
       )
       .addCase(current.pending, (state) => {
@@ -147,10 +148,12 @@ const authSlice = createSlice({
       .addCase(
         registerGoogle.fulfilled,
         (state, action: PayloadAction<IRegisterGoogleResponse>) => {
+          console.log(action.payload);
           state.isLoggedIn = true;
           state.username = action.payload.username;
           state.avatar = action.payload.avatar;
           state.token = action.payload.token;
+          state.chats = action.payload.chats;
         }
       )
       .addCase(

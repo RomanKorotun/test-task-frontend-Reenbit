@@ -78,7 +78,6 @@ export const registerGoogle = createAsyncThunk(
       response.data.token = token;
       return response.data;
     } catch (error: any) {
-      console.log(error);
       return thunkApi.rejectWithValue(error.message);
     }
   }
