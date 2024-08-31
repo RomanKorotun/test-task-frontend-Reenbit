@@ -14,7 +14,6 @@ const socket = io("https://test-task-backend-reenbit.onrender.com");
 const ChatsPage: FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { chats } = useAuth();
-  console.log(chats);
   useEffect(() => {
     socket.on("quoteResponse", (updatedChat) => {
       dispatch(addRandomQuote(updatedChat));

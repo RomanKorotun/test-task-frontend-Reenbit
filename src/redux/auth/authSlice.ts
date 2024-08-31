@@ -148,7 +148,6 @@ const authSlice = createSlice({
       .addCase(
         registerGoogle.fulfilled,
         (state, action: PayloadAction<IRegisterGoogleResponse>) => {
-          console.log(action.payload);
           state.isLoggedIn = true;
           state.username = action.payload.username;
           state.avatar = action.payload.avatar;
