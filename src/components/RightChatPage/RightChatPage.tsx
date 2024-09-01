@@ -29,13 +29,25 @@ export const RightChatPage: FC = () => {
           </div>
           <ul className={styled.listMessage}>
             {chat.messages.map((el) => {
-              const data = new Date(el.date);
-              const dayOfMonth = data.getDate();
-              const monthIndex = data.getMonth() + 1;
-              const year = data.getFullYear();
-              const hours = data.getHours();
-              const minutes = data.getMinutes();
-              const seconds = data.getSeconds();
+              console.log(el);
+              let data;
+              if (el?.date) {
+                data = new Date(el.date);
+              }
+              let dayOfMonth;
+              let monthIndex;
+              let hours;
+              let year;
+              let minutes;
+              let seconds;
+              if (data) {
+                dayOfMonth = data.getDate();
+                monthIndex = data.getMonth() + 1;
+                year = data.getFullYear();
+                hours = data.getHours();
+                minutes = data.getMinutes();
+                seconds = data.getSeconds();
+              }
               const formattedHours = String(hours).padStart(2, "0");
               const formattedMinutes = String(minutes).padStart(2, "0");
               const formattedSeconds = String(seconds).padStart(2, "0");
