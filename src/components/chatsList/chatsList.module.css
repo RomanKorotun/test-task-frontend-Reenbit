@@ -1,13 +1,13 @@
 .chatListCard {
   padding-top: 30px;
-  padding-right: 15px;
   padding-bottom: 30px;
-  padding-left: 15px;
 }
 
 .headerList {
   display: flex;
   justify-content: space-between;
+  padding-right: 15px;
+  padding-left: 15px;
   margin-bottom: 10px;
 }
 
@@ -38,6 +38,8 @@
 }
 
 .listItem {
+  padding-left: 15px;
+  padding-right: 15px;
   padding-top: 30px;
   padding-bottom: 30px;
   border-bottom: 1px solid #d6d6d6;
@@ -49,6 +51,8 @@
 
 .listItemActive {
   background-color: #f5f5f5;
+  padding-left: 15px;
+  padding-right: 15px;
   padding-top: 30px;
   padding-bottom: 30px;
   border-bottom: 1px solid #d6d6d6;
