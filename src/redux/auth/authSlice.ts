@@ -11,10 +11,10 @@ import {
 } from "../api";
 
 interface IMessage {
-  _id: string;
-  owner: string;
-  message: string;
-  date: string;
+  _id?: string;
+  owner?: string;
+  message?: string;
+  date?: string;
 }
 
 interface IChat {
@@ -22,10 +22,7 @@ interface IChat {
   lastName: string;
   isActive: boolean;
   avatar: string;
-  owner: {
-    _id: string;
-    email: string;
-  };
+  owner: string;
   messages: IMessage[];
   _id: string;
   createdAt: string;
