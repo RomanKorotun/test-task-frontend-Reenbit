@@ -3,12 +3,13 @@ import axios from "axios";
 import { IUserRegister } from "../components/Register/Register";
 import { RootState } from "./store";
 import { IUserLogin } from "../components/Login/Login";
-import { IChat } from "../components/Modals/ModalAddChat";
+import { IChat } from "../components/Modals/ModalAddChat/ModalAddChat";
 import { IValues } from "../components/RightChatPage/RightChatPage";
+import { IModalEditChat } from "../components/Modals/ModalEditChat/ModalEditChat";
 
 const instance = axios.create({
-  baseURL: "https://test-task-backend-reenbit.onrender.com",
-  // baseURL: "http://localhost:3030",
+  // baseURL: "https://test-task-backend-reenbit.onrender.com",
+  baseURL: "http://localhost:3030",
 });
 
 function setAuthToken(token: string) {
@@ -113,8 +114,37 @@ export const addMessage = createAsyncThunk(
   "auth/addMessage",
   async ({ message, id }: IValues, thunkApi) => {
     try {
-      const response = await instance.put(`/api/chats/${id}`, { message });
-      console.log(response);
+      const response = await instance.put(`/api/chats/${id}/addmessage`, {
+        message,
+      });
+      return response.data;
+    } catch (error: any) {
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const deleteChat = createAsyncThunk(
+  "auth/deleteChat",
+  async (id: string, thunkApi) => {
+    try {
+      const response = await instance.delete(`/api/chats/${id}`);
+      console.log(response.data);
+      return response.data;
+    } catch (error: any) {
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const editChat = createAsyncThunk(
+  "auth/editChat",
+  async ({ id, firstName, lastName }: IModalEditChat, thunkApi) => {
+    try {
+      const response = await instance.put(`/api/chats/${id}/editchat`, {
+        firstName,
+        lastName,
+      });
       return response.data;
     } catch (error: any) {
       return thunkApi.rejectWithValue(error.message);

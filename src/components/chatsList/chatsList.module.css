@@ -8,7 +8,7 @@
   justify-content: space-between;
   padding-right: 15px;
   padding-left: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 .btnAddChat {
@@ -29,6 +29,21 @@
 .btnAddChat:hover,
 .btnAddChat:focus {
   transform: scale(1.05);
+}
+
+.filterCard {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-bottom: 30px;
+}
+
+.inputFilter {
+  width: 100%;
+  border: 1px solid #d6d6d6;
+  padding: 9px;
+  outline: none;
+  color: #67656a;
+  border-radius: 11px;
 }
 
 .chatListTitle {
@@ -73,18 +88,27 @@
   justify-content: space-between;
 }
 
+.namesCard {
+  margin-bottom: 5px;
+}
+
 .img {
   border-radius: 11px;
 }
 
 .firstName {
-  color: #969696;
+  color: #5a5957;
   display: inline-block;
   margin-right: 5px;
 }
 
 .lastName {
-  color: #969696;
+  color: #5a5957;
+}
+
+.message {
+  color: #a1a1a1;
+  font-size: 13px;
 }
 
 .date {

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import styled from "./rightChatPage.module.css";
 import sprite from "../../images/sprite.svg";
 import { useAuth } from "../../hooks/useAuth";
@@ -6,6 +6,8 @@ import { Formik, Field, Form, FormikHelpers } from "formik";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../redux/store";
 import { addMessage } from "../../redux/api";
+import { ModalDeleteChat } from "../Modals/ModalDeleteChat/ModalDeleteChat";
+import { ModalEditChat } from "../Modals/ModalEditChat/ModalEditChat";
 
 export interface IValues {
   message: string;
@@ -13,6 +15,14 @@ export interface IValues {
 }
 
 export const RightChatPage: FC = () => {
+  const [openEditChat, setOpenEditChat] = useState<boolean>(false);
+  const [openDeleteChat, setOpenDeleteChat] = useState<boolean>(false);
+  const toggleEditChat = () => {
+    setOpenEditChat((pS: boolean) => !pS);
+  };
+  const toggleDeleteChat = () => {
+    setOpenDeleteChat((pS: boolean) => !pS);
+  };
   const dispatch = useDispatch<AppDispatch>();
   const { chats } = useAuth();
   const chat = chats.find((el) => el.isActive === true);
@@ -20,26 +30,42 @@ export const RightChatPage: FC = () => {
     <>
       {chat && (
         <div className={styled.right}>
-          <div className={styled.nameChat}>
-            <img src={chat.avatar} alt="avatar" className={styled.img} />
-            <div>
-              <span className={styled.firstName}>{chat.firstName}</span>
-              <span>{chat.lastName}</span>
+          <div className={styled.headerChat}>
+            <div className={styled.nameChat}>
+              <img src={chat.avatar} alt="avatar" className={styled.img} />
+              <div>
+                <span className={styled.firstName}>{chat.firstName}</span>
+                <span>{chat.lastName}</span>
+              </div>
+            </div>
+            <div className={styled.updateChat}>
+              <button className={styled.btnHeaderChat} onClick={toggleEditChat}>
+                <svg width={20} height={20} className={styled.editIcon}>
+                  <use href={`${sprite}#edit-icon`} />
+                </svg>
+              </button>
+              <button
+                className={styled.btnHeaderChat}
+                onClick={toggleDeleteChat}
+              >
+                <svg width={20} height={20} className={styled.deleteIcon}>
+                  <use href={`${sprite}#delete-icon`} />
+                </svg>
+              </button>
             </div>
           </div>
           <ul className={styled.listMessage}>
             {chat.messages.map((el) => {
-              console.log(el);
               let data;
               if (el?.date) {
                 data = new Date(el.date);
               }
-              let dayOfMonth;
-              let monthIndex;
-              let hours;
-              let year;
-              let minutes;
-              let seconds;
+              let dayOfMonth = null;
+              let monthIndex = null;
+              let year = null;
+              let hours = null;
+              let minutes = null;
+              let seconds = null;
               if (data) {
                 dayOfMonth = data.getDate();
                 monthIndex = data.getMonth() + 1;
@@ -48,6 +74,8 @@ export const RightChatPage: FC = () => {
                 minutes = data.getMinutes();
                 seconds = data.getSeconds();
               }
+              const formattedDayOfMonth = String(dayOfMonth).padStart(2, "0");
+              const formattedMonthIndex = String(monthIndex).padStart(2, "0");
               const formattedHours = String(hours).padStart(2, "0");
               const formattedMinutes = String(minutes).padStart(2, "0");
               const formattedSeconds = String(seconds).padStart(2, "0");
@@ -64,7 +92,7 @@ export const RightChatPage: FC = () => {
                         <p className={styled.messageLeft}>{el.message}</p>
                         <p
                           className={styled.dateLeft}
-                        >{`${monthIndex}/${dayOfMonth}/${year} ${formattedHours}:${formattedMinutes}:${formattedSeconds} AM`}</p>
+                        >{`${formattedDayOfMonth}/${formattedMonthIndex}/${year} ${formattedHours}:${formattedMinutes}:${formattedSeconds} AM`}</p>
                       </div>
                     </>
                   )}
@@ -74,7 +102,7 @@ export const RightChatPage: FC = () => {
                         <p className={styled.messageRight}>{el.message}</p>
                         <p
                           className={styled.dateRight}
-                        >{`${monthIndex}/${dayOfMonth}/${year} ${formattedHours}:${formattedMinutes}:${formattedSeconds} AM`}</p>
+                        >{`${formattedDayOfMonth}/${formattedMonthIndex}/${year} ${formattedHours}:${formattedMinutes}:${formattedSeconds} AM`}</p>
                       </div>
                     </>
                   )}
@@ -106,6 +134,17 @@ export const RightChatPage: FC = () => {
               </Form>
             </div>
           </Formik>
+          <ModalEditChat
+            isOpen={openEditChat}
+            onToggle={toggleEditChat}
+            id={chat._id}
+            chat={{ firstName: chat.firstName, lastName: chat.lastName }}
+          />
+          <ModalDeleteChat
+            isOpen={openDeleteChat}
+            onToggle={toggleDeleteChat}
+            id={chat._id}
+          />
         </div>
       )}
     </>

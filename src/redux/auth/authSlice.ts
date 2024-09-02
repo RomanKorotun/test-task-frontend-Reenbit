@@ -3,6 +3,8 @@ import {
   addChat,
   addMessage,
   current,
+  deleteChat,
+  editChat,
   login,
   logout,
   register,
@@ -57,6 +59,11 @@ interface IRegisterGoogleResponse {
   username: string;
   avatar: string;
   token: string;
+  chats: IChat[];
+}
+
+interface IDeleteChatResponse {
+  deleteChat: IChat;
   chats: IChat[];
 }
 
@@ -155,7 +162,6 @@ const authSlice = createSlice({
       .addCase(
         updateIsActiveChat.fulfilled,
         (state, action: PayloadAction<IUpdateIsActiveChatResponse>) => {
-          console.log(action);
           state.chats = action.payload.chats;
         }
       )
@@ -163,6 +169,20 @@ const authSlice = createSlice({
         state.chats = [...state.chats, action.payload];
       })
       .addCase(addMessage.fulfilled, (state, action: PayloadAction<IChat>) => {
+        state.chats = state.chats.map((chat) => {
+          if (chat._id !== action.payload._id) {
+            return chat;
+          }
+          return action.payload;
+        });
+      })
+      .addCase(
+        deleteChat.fulfilled,
+        (state, action: PayloadAction<IDeleteChatResponse>) => {
+          state.chats = action.payload.chats;
+        }
+      )
+      .addCase(editChat.fulfilled, (state, action: PayloadAction<IChat>) => {
         state.chats = state.chats.map((chat) => {
           if (chat._id !== action.payload._id) {
             return chat;
