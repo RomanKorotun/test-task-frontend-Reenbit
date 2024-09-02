@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/test-task-frontend-Reenbit/static/css/main.298b85fd.css",
-    "main.js": "/test-task-frontend-Reenbit/static/js/main.469edd70.js",
+    "main.js": "/test-task-frontend-Reenbit/static/js/main.3a40ddce.js",
     "static/css/33.78e300e7.chunk.css": "/test-task-frontend-Reenbit/static/css/33.78e300e7.chunk.css",
     "static/js/33.51c129b9.chunk.js": "/test-task-frontend-Reenbit/static/js/33.51c129b9.chunk.js",
     "static/css/434.b81b783f.chunk.css": "/test-task-frontend-Reenbit/static/css/434.b81b783f.chunk.css",
@@ -16,7 +16,7 @@
     "static/media/sprite.svg": "/test-task-frontend-Reenbit/static/media/sprite.cd76a83c60c2fd83daa87e8071893112.svg",
     "index.html": "/test-task-frontend-Reenbit/index.html",
     "main.298b85fd.css.map": "/test-task-frontend-Reenbit/static/css/main.298b85fd.css.map",
-    "main.469edd70.js.map": "/test-task-frontend-Reenbit/static/js/main.469edd70.js.map",
+    "main.3a40ddce.js.map": "/test-task-frontend-Reenbit/static/js/main.3a40ddce.js.map",
     "33.78e300e7.chunk.css.map": "/test-task-frontend-Reenbit/static/css/33.78e300e7.chunk.css.map",
     "33.51c129b9.chunk.js.map": "/test-task-frontend-Reenbit/static/js/33.51c129b9.chunk.js.map",
     "434.b81b783f.chunk.css.map": "/test-task-frontend-Reenbit/static/css/434.b81b783f.chunk.css.map",
@@ -31,6 +31,6 @@
   },
   "entrypoints": [
     "static/css/main.298b85fd.css",
-    "static/js/main.469edd70.js"
+    "static/js/main.3a40ddce.js"
   ]
 }
