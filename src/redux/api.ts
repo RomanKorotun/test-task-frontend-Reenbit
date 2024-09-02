@@ -8,8 +8,8 @@ import { IValues } from "../components/RightChatPage/RightChatPage";
 import { IModalEditChat } from "../components/Modals/ModalEditChat/ModalEditChat";
 
 const instance = axios.create({
-  // baseURL: "https://test-task-backend-reenbit.onrender.com",
-  baseURL: "http://localhost:3030",
+  baseURL: "https://test-task-backend-reenbit.onrender.com",
+  // baseURL: "http://localhost:3030",
 });
 
 function setAuthToken(token: string) {
